@@ -1,0 +1,81 @@
+<mvc:View controllerName="IAI.zcns_mng_crd12.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:f="sap.ui.layout.form">
+    <semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+        <semantic:content>
+            <ObjectHeader id="objectHeader" title="{Banfn} - {Txz01}" number="{ path: 'Preis', formatter: '.formatter.currencyValue' }" numberUnit="{Waers}" />
+
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="Credit Request Details"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <Label text="{i18n>ItemDescription}" labelFor="Txz01" />
+                <Text text="{Txz01}" />
+                <Label text="{i18n>Material}" labelFor="Matnr" />
+                <Text text="{Matnr}" />
+                <Label text="{i18n>Price}" labelFor="Preis" />
+                <HBox>
+                    <Text text="{ path: 'Preis', formatter: '.formatter.currencyValue' }" />
+                    <Text text="{Waers}" class="sapUiTinyMarginBegin" />
+                </HBox>
+
+                <!-- <Label text="{i18n>Currency}" labelFor="Waers" /> -->
+                <!-- <Text text="{Waers}" /> -->
+                <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
+                <Text text="{Knttp}" />
+                <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
+                <Text text="{PsPspPnr}" />
+                <Label text="{i18n>CostCenter}" labelFor="Kostl" />
+                <Text text="{Kostl}" />
+                <Label text="{i18n>Asset}" labelFor="Anln1" />
+                <Text text="{Anln1}" />
+                <Label text="{i18n>Network}" labelFor="Nplnr" />
+                <Text text="{Nplnr}" />
+                <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
+                <Text id="Lfdat" text="{Lfdat}" />
+                <Label text="{i18n>Buyer}" labelFor="Afnam" />
+                <Text id="Afnam" text="{Afnam}" />
+                <Label text="{i18n>BuyerName}" labelFor="Buyer" />
+                <Text id="Buyer" text="{Buyer}" />
+                <Label text="{i18n>BuyerPhone}" labelFor="PhoneB" />
+                <Text id="PhoneB" text="{PhoneB}" />
+                <Label text="{i18n>BuyerEmail}" labelFor="EmailB" />
+                <Text id="EmailB" text="{EmailB}" />
+                <Label text="{i18n>BuyingReason}" labelFor="Reason" />
+                <Text id="Reason" text="{Reason}" />
+                <Label text="{i18n>Vendor}" labelFor="Vendor" />
+                <Text id="Vendor" text="{Vendor}" />
+                <Label text="{i18n>VendorAddress}" labelFor="AddressV" />
+                <Text id="AddressV" text="{AddressV}" />
+                <Label text="{i18n>VendorEmail}" labelFor="EmailV" />
+                <Text id="EmailV" text="{EmailV}" />
+                <Label text="{i18n>ArrivalMethod}" labelFor="Arrival" />
+                <Text id="Arrival" text="{Arrival}" />
+                <Label text="{i18n>Plant}" labelFor="Werks" />
+                <Text id="Werks" text="{Werks}" />
+                <Label text="{i18n>StorageLocation}" labelFor="Lgort" />
+                <Text id="Lgort" text="{Lgort}" />
+                <Label text="{i18n>Quantity}" labelFor="Menge" />
+                <Text id="Menge" text="{Menge}" />
+                <Label text="{i18n>UnitOfMeasure}" labelFor="Meins" />
+                <Text id="Meins" text="{Meins}" />
+                <Label text="{i18n>MaterialGroup}" labelFor="Matkl" />
+                <Text id="Matkl" text="{Matkl}" />
+                <Label text="{i18n>StateConfirm}" labelFor="StateConfirm" />
+                <Switch id="StateConfirm" enabled="false" state="{StateConfirm}" />
+            </f:SimpleForm>
+        </semantic:content>
+    </semantic:DetailPage>
+</mvc:View>

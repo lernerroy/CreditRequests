@@ -1,0 +1,83 @@
+<mvc:View controllerName="IAI.zcns_mng_crd12.controller.NewCreditRequest" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:semantic="sap.f.semantic" xmlns:f="sap.ui.layout.form">
+    <semantic:SemanticPage showFooter="true" busy="{newCreditRequestViewModel>/busy}" busyIndicatorDelay="{newCreditRequestViewModel>/delay}">
+        <semantic:content>
+            <ObjectHeader id="objectHeader" title="{Banfn} - {Txz01}" number="{ path: 'Preis', formatter: '.formatter.currencyValue' }" numberUnit="{Waers}" />
+
+            <f:SimpleForm
+                id="creditRequestForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="{i18n>newCreditRequestTitle}"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <Label text="{i18n>ItemDescription}" labelFor="Txz01" />
+                <Input id="Txz01" value="{Txz01}" required="true" editable="true" />
+                <Label text="{i18n>Material}" labelFor="Matnr" />
+                <Input id="Matnr" value="{Matnr}" editable="true" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onValueHelpRequest" />
+                <Label text="{i18n>Price}" labelFor="Preis" />
+                <Input id="Preis" value="{ path: 'Preis', formatter: '.formatter.currencyValue' }" editable="true" type="Number" required="true" />
+                <ComboBox items="{
+					path: '/CurrencySet',
+                    length: 1000
+				}" required="true" showSecondaryValues="true">
+                    <core:ListItem key="{Waers}" text="{Ktext}" additionalText="{Waers}" />
+                </ComboBox>
+                <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
+                <ComboBox items="{
+					path: '/CurrencySet',
+                    length: 1000
+				}" change="onAccountAssignmentChange" required="true">
+                    <core:Item key="{Waers}" text="{Waers}" />
+                </ComboBox>
+                <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
+                <Input id="PsPspPnr" value="{PsPspPnr}" editable="true" visible="{newCreditRequestViewModel>/wbsVisible}" />
+                <Label text="{i18n>CostCenter}" labelFor="Kostl" />
+                <Input id="Kostl" value="{Kostl}" editable="true" visible="{newCreditRequestViewModel>/costCenterVisible}" />
+                <Label text="{i18n>Asset}" labelFor="Anln1" />
+                <Input id="Anln1" value="{Anln1}" editable="true" visible="{newCreditRequestViewModel>/assetVisible}" />
+                <Label text="{i18n>Network}" labelFor="Nplnr" />
+                <Input id="Nplnr" value="{Nplnr}" editable="true" visible="{newCreditRequestViewModel>/networkVisible}" />
+                <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
+                <DatePicker value="{Lfdat}" editable="true" required="true" />
+                <Label text="{i18n>Buyer}" labelFor="Afnam" />
+                <Input id="Afnam" value="{Afnam}" editable="true" />
+
+                <Label text="{i18n>BuyingReason}" labelFor="Reason" />
+                <Input value="{Reason}" editable="true" required="true" />
+
+                <Label text="{i18n>Vendor}" labelFor="Vendor" />
+                <Input id="Vendor" value="{Vendor}" editable="true" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onValueHelpRequest" />
+
+                <Label text="{i18n>ArrivalMethod}" labelFor="Arrival" />
+                <ComboBox items="{
+					path: '/CurrencySet',
+                    length: 1000
+				}" change="onAccountAssignmentChange" required="true">
+                    <core:Item key="{Waers}" text="{Waers}" />
+                </ComboBox>
+                <!-- <Input id="Arrival" value="{Arrival}" editable="true" /> -->
+
+                <Label text="{i18n>StateConfirm}" labelFor="StateConfirm" />
+                <Switch id="StateConfirm" state="{StateConfirm}" enabled="true" />
+            </f:SimpleForm>
+        </semantic:content>
+        <semantic:footerMainAction>
+            <semantic:FooterMainAction text="Save" press="onSave" />
+        </semantic:footerMainAction>
+        <semantic:footerCustomActions>
+            <Button text="Cancel" press="onCancel" />
+        </semantic:footerCustomActions>
+    </semantic:SemanticPage>
+</mvc:View>

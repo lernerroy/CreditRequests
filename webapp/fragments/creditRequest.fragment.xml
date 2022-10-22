@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox>
+        <VBox displayInline="false" class="sapUiContentPadding">
+            <Label text="{i18n>ItemDescription}" labelFor="Txz01" />
+            <Input id="Txz01" value="{Txz01}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Material}" labelFor="Matnr" />
+            <Input id="Matnr" value="{Matnr}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Price}" labelFor="Preis" />
+            <Input id="Preis" value="{ path: 'Preis', formatter: '.formatter.currencyValue' }" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Currency}" labelFor="Waers" />
+            <Input id="Waers" value="{Waers}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
+            <Input id="Knttp" value="{Knttp}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
+            <Input id="PsPspPnr" value="{PsPspPnr}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>CostCenter}" labelFor="Kostl" />
+            <Input id="Kostl" value="{Kostl}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Asset}" labelFor="Anln1" />
+            <Input id="Anln1" value="{Anln1}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Network}" labelFor="Nplnr" />
+            <Input id="Nplnr" value="{Nplnr}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
+            <Input id="Lfdat" value="{Lfdat}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Buyer}" labelFor="Afnam" />
+            <Input id="Afnam" value="{Afnam}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>BuyerName}" labelFor="Buyer" />
+            <Input id="Buyer" value="{Buyer}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>BuyerPhone}" labelFor="PhoneB" />
+            <Input id="PhoneB" value="{PhoneB}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>BuyerEmail}" labelFor="EmailB" />
+            <Input id="EmailB" value="{EmailB}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>BuyingReason}" labelFor="Reason" />
+            <Input id="Reason" value="{Reason}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>Vendor}" labelFor="Vendor" />
+            <Input id="Vendor" value="{Vendor}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>VendorAddress}" labelFor="AddressV" />
+            <Input id="AddressV" value="{AddressV}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>VendorEmail}" labelFor="EmailV" />
+            <Input id="EmailV" value="{EmailV}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>ArrivalMethod}" labelFor="Arrival" />
+            <Input id="Arrival" value="{Arrival}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>Plant}" labelFor="Werks" />
+            <Input id="Werks" value="{Werks}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>StorageLocation}" labelFor="Lgort" />
+            <Input id="Lgort" value="{Lgort}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>Quantity}" labelFor="Menge" />
+            <Input id="Menge" value="{Menge}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>UnitOfMeasure}" labelFor="Meins" />
+            <Input id="Meins" value="{Meins}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+            <Label text="{i18n>MaterialGroup}" labelFor="Matkl" />
+            <Input id="Matkl" value="{Matkl}" editable="false" showValueHelp="true" valueHelpRequest=".onVendorValueHelpRequest" />
+
+            <Label text="{i18n>StateConfirm}" labelFor="StateConfirm" />
+            <CheckBox id="StateConfirm" enabled="{StateConfirm}" editable="false" />
+        </VBox>
+    </VBox>
+</core:FragmentDefinition>
