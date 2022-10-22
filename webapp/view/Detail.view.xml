@@ -31,15 +31,16 @@
                     <Text text="{Waers}" class="sapUiTinyMarginBegin" />
                 </HBox>
                 <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
-                <Text text="{Knttp}" />
-                <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
-                <Text text="{PsPspPnr}" visible="{= ${Knttp} === 'P'}" />
-                <Label text="{i18n>CostCenter}" labelFor="Kostl" />
-                <Text text="{Kostl}" visible="{= ${Knttp} === 'C'}" />
+                <Text text="{Knttp} ({Acc/Knttx})" />
+                <Label text="{i18n>WBS}" labelFor="PsPspPnr" visible="{= ${Knttp} === 'P'}" />
+                <Text text="{PsPspPnr} ({WBS/Ktext})" visible="{= ${Knttp} === 'P'}" />
+                <Label text="{i18n>CostCenter}" labelFor="Kostl" visible="{= ${Knttp} === 'K'}"/>
+                <Text text="{Kostl} ({CostCenter/Ktext})" visible="{= ${Knttp} === 'K'}" />
                 <Label text="{i18n>Asset}" labelFor="Anln1" visible="{= ${Knttp} === 'A'}" />
-                <Text text="{Anln1}" />
+                <Text text="{Anln1} ({Asset/Anlhtxt})" visible="{= ${Knttp} === 'A'}" />
                 <Label text="{i18n>Network}" labelFor="Nplnr" visible="{= ${Knttp} === 'N'}" />
-                <Text text="{Nplnr}" />
+                <Text text="{Nplnr} ({Network/Ktext})" visible="{= ${Knttp} === 'N'}" />
+
                 <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
                 <Text id="Lfdat" text="{Lfdat}" />
                 <Label text="{i18n>Buyer}" labelFor="Afnam" />
@@ -59,7 +60,7 @@
                 <Label text="{i18n>VendorEmail}" labelFor="EmailV" />
                 <Text id="EmailV" text="{EmailV}" />
                 <Label text="{i18n>ArrivalMethod}" labelFor="Arrival" />
-                <Text id="Arrival" text="{Arrival}" />
+                <Text id="Arrival" text="{Arrival} ({ArrivalMethod/Text})"/>
                 <Label text="{i18n>Plant}" labelFor="Werks" />
                 <Text id="Werks" text="{Werks}" />
                 <Label text="{i18n>StorageLocation}" labelFor="Lgort" />

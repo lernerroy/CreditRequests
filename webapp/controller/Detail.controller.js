@@ -114,7 +114,7 @@ sap.ui.define(
         this.getView().bindElement({
           path: sObjectPath,
           parameters: {
-            $expand: "Material"
+            $expand: "Material,Acc,ArrivalMethod,Asset,CostCenter,WBS,Network"
           },
           events: {
             change: this._onBindingChange.bind(this),
