@@ -25,59 +25,57 @@
                 <Label text="{i18n>ItemDescription}" labelFor="Txz01" />
                 <Input id="Txz01" value="{Txz01}" required="true" editable="true" />
                 <Label text="{i18n>Material}" labelFor="Matnr" />
-                <Input id="Matnr" value="{Matnr}" editable="true" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onValueHelpRequest" />
+                <Input id="Matnr" value="{Matnr}" editable="true" valueHelpOnly="true" showValueHelp="true" valueHelpRequest=".onMaterialValueHelpRequested" />
                 <Label text="{i18n>Price}" labelFor="Preis" />
                 <Input id="Preis" value="{ path: 'Preis', formatter: '.formatter.currencyValue' }" editable="true" type="Number" required="true" />
                 <ComboBox items="{
 					path: '/CurrencySet',
                     length: 1000
-				}" required="true" showSecondaryValues="true">
-                    <core:ListItem key="{Waers}" text="{Ktext}" additionalText="{Waers}" />
+				}" required="true" value="{Waers}" showSecondaryValues="true">
+                    <core:ListItem key="{Waers}" text="{Waers}" additionalText="{Ktext}" />
                 </ComboBox>
                 <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
                 <ComboBox items="{
-					path: '/CurrencySet',
+					path: '/AccSet',
                     length: 1000
-				}" change="onAccountAssignmentChange" required="true">
-                    <core:Item key="{Waers}" text="{Waers}" />
+				}" value="{Knttp}" change="onAccountAssignmentChange" required="true" showSecondaryValues="true">
+                    <core:ListItem key="{Knttp}" text="{Knttp}" additionalText="{Knttx}" />
                 </ComboBox>
                 <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
-                <Input id="PsPspPnr" value="{PsPspPnr}" editable="true" visible="{newCreditRequestViewModel>/wbsVisible}" />
+                <Input id="PsPspPnr" value="{PsPspPnr}" editable="true" visible="{newCreditRequestViewModel>/wbsVisible}" required="true" />
                 <Label text="{i18n>CostCenter}" labelFor="Kostl" />
-                <Input id="Kostl" value="{Kostl}" editable="true" visible="{newCreditRequestViewModel>/costCenterVisible}" />
+                <Input id="Kostl" value="{Kostl}" editable="true" visible="{newCreditRequestViewModel>/costCenterVisible}" required="true" />
                 <Label text="{i18n>Asset}" labelFor="Anln1" />
-                <Input id="Anln1" value="{Anln1}" editable="true" visible="{newCreditRequestViewModel>/assetVisible}" />
+                <Input id="Anln1" value="{Anln1}" editable="true" visible="{newCreditRequestViewModel>/assetVisible}" required="true" />
                 <Label text="{i18n>Network}" labelFor="Nplnr" />
-                <Input id="Nplnr" value="{Nplnr}" editable="true" visible="{newCreditRequestViewModel>/networkVisible}" />
+                <Input id="Nplnr" value="{Nplnr}" editable="true" visible="{newCreditRequestViewModel>/networkVisible}" required="true" />
                 <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
-                <DatePicker value="{Lfdat}" editable="true" required="true" />
+                <DatePicker value="{Lfdat}" editable="true" required="true" valueFormat="yyyy-MM-ddTKK:mm:ss" />
                 <Label text="{i18n>Buyer}" labelFor="Afnam" />
-                <Input id="Afnam" value="{Afnam}" editable="true" />
+                <Input id="Afnam" value="{Afnam}" editable="true" required="true" />
 
                 <Label text="{i18n>BuyingReason}" labelFor="Reason" />
                 <Input value="{Reason}" editable="true" required="true" />
 
                 <Label text="{i18n>Vendor}" labelFor="Vendor" />
-                <Input id="Vendor" value="{Vendor}" editable="true" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onValueHelpRequest" />
+                <Input id="Vendor" value="{Vendor}" editable="true" valueHelpOnly="true" showValueHelp="true" required="true" valueHelpRequest="onValueHelpRequest" />
 
                 <Label text="{i18n>ArrivalMethod}" labelFor="Arrival" />
                 <ComboBox items="{
-					path: '/CurrencySet',
+					path: '/ArrivalMethodSet',
                     length: 1000
-				}" change="onAccountAssignmentChange" required="true">
-                    <core:Item key="{Waers}" text="{Waers}" />
+				}" value="{Arrival}" showSecondaryValues="true" required="true">
+                    <core:ListItem key="{ArrivalCode}" text="{ArrivalCode}" additionalText="{Text}" />
                 </ComboBox>
-                <!-- <Input id="Arrival" value="{Arrival}" editable="true" /> -->
-
                 <Label text="{i18n>StateConfirm}" labelFor="StateConfirm" />
                 <Switch id="StateConfirm" state="{StateConfirm}" enabled="true" />
             </f:SimpleForm>
         </semantic:content>
         <semantic:footerMainAction>
-            <semantic:FooterMainAction text="Save" press="onSave" />
+            <semantic:FooterMainAction text="{i18n>save}" press="onSave" />
         </semantic:footerMainAction>
         <semantic:footerCustomActions>
-            <Button text="Cancel" press="onCancel" />
+            <Button text="{i18n>cancel}" press="onCancel" />
         </semantic:footerCustomActions>
     </semantic:SemanticPage>
 </mvc:View>

@@ -24,24 +24,21 @@
                 <Label text="{i18n>ItemDescription}" labelFor="Txz01" />
                 <Text text="{Txz01}" />
                 <Label text="{i18n>Material}" labelFor="Matnr" />
-                <Text text="{Matnr}" />
+                <Text text="{Matnr} ({Material/Maktx})" />
                 <Label text="{i18n>Price}" labelFor="Preis" />
                 <HBox>
-                    <Text text="{ path: 'Preis', formatter: '.formatter.currencyValue' }" />
+                    <Text text="{path: 'Preis', formatter: '.formatter.currencyValue' }" />
                     <Text text="{Waers}" class="sapUiTinyMarginBegin" />
                 </HBox>
-
-                <!-- <Label text="{i18n>Currency}" labelFor="Waers" /> -->
-                <!-- <Text text="{Waers}" /> -->
                 <Label text="{i18n>AccountAssignment}" labelFor="Knttp" />
                 <Text text="{Knttp}" />
                 <Label text="{i18n>WBS}" labelFor="PsPspPnr" />
-                <Text text="{PsPspPnr}" />
+                <Text text="{PsPspPnr}" visible="{= ${Knttp} === 'P'}" />
                 <Label text="{i18n>CostCenter}" labelFor="Kostl" />
-                <Text text="{Kostl}" />
-                <Label text="{i18n>Asset}" labelFor="Anln1" />
+                <Text text="{Kostl}" visible="{= ${Knttp} === 'C'}" />
+                <Label text="{i18n>Asset}" labelFor="Anln1" visible="{= ${Knttp} === 'A'}" />
                 <Text text="{Anln1}" />
-                <Label text="{i18n>Network}" labelFor="Nplnr" />
+                <Label text="{i18n>Network}" labelFor="Nplnr" visible="{= ${Knttp} === 'N'}" />
                 <Text text="{Nplnr}" />
                 <Label text="{i18n>DeliveryDate}" labelFor="Lfdat" />
                 <Text id="Lfdat" text="{Lfdat}" />

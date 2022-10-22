@@ -103,20 +103,6 @@ sap.ui.define(
           );
       },
 
-      /**
-
-			 * Binds the view to the object path. Makes sure that detail view displays
-
-			 * a busy indicator while data for the corresponding element binding is loaded.
-
-			 * @function
-
-			 * @param {string} sObjectPath path to the object to be bound to the view.
-
-			 * @private
-
-			 */
-
       _bindView: function (sObjectPath) {
         // Set busy indicator during view binding
 
@@ -125,10 +111,11 @@ sap.ui.define(
         // If the view was not bound yet its not busy, only if the binding requests data it is set to busy again
 
         oViewModel.setProperty("/busy", false);
-
         this.getView().bindElement({
           path: sObjectPath,
-
+          parameters: {
+            $expand: "Material"
+          },
           events: {
             change: this._onBindingChange.bind(this),
 
